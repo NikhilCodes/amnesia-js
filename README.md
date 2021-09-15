@@ -13,6 +13,7 @@ await am.connect({ port: 4224 });
 
 Run a Query
 ```javascript
-await am.query('SET a AS b WHERE TTL=10s NFETCH=2') // OK
+let res = await am.query('SET a AS b WHERE TTL=10s NFETCH=2');
+console.log(res) // OK
 ```
 

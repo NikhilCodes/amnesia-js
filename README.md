@@ -1,0 +1,16 @@
+# Amnesia JS
+AmnesiaDB Official Client
+
+## Example
+
+Connect to locally hosted Amnesia DB
+```javascript
+const am = new AmnesiaClient();
+await am.connect({ port: 4224 });
+```
+
+Run a Query
+```javascript
+await am.query('SET a AS b WHERE TTL=10s NFETCH=2') // OK
+```
+

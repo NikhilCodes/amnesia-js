@@ -31,7 +31,7 @@ export class AmnesiaClient {
             this.jobResolvers.delete(resp[0]);
             resolveInner?.(resp[1]);
           });
-          console.debug('Connected to Keystone');
+          console.debug('Connected to Amnesia DB');
           resolve(this.client);
         });
       },

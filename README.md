@@ -1,5 +1,5 @@
 # Amnesia JS
-AmnesiaDB Official Client
+[AmnesiaDB](https://github.com/NikhilCodes/AmnesiaDB) Official Client
 
 ## Example
 

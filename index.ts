@@ -26,10 +26,13 @@ export class AmnesiaClient {
           host,
         }, () => {
           this.client?.on('data', (data: string) => {
-            const resp = data.toString().split(':');
-            let resolveInner = this.jobResolvers.get(resp[0]);
-            this.jobResolvers.delete(resp[0]);
-            resolveInner?.(resp[1]);
+            const respList = data.toString().trimEnd().split('\r\n');
+            respList.forEach((value, index) => {
+              let resp = value.split(':')
+              let resolveInner = this.jobResolvers.get(resp[0]);
+              this.jobResolvers.delete(resp[0]);
+              resolveInner?.(resp[1]);
+            })
           });
           console.debug('Connected to Amnesia DB');
           resolve(this.client);
@@ -47,5 +50,9 @@ export class AmnesiaClient {
         this.client?.write(`${jobId}:${queryString}${CRLF}`);
       },
     );
+  }
+
+  destroy() {
+    this.client.destroy();
   }
 }

@@ -1,4 +1,4 @@
-import { AmnesiaClient } from '../index';
+import { AmnesiaClient } from '../src';
 
 test('Query Test', async () => {
   const am = new AmnesiaClient();

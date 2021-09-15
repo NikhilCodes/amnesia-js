@@ -1,13 +1,16 @@
 {
   "name": "amnesia-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Javascript Client for AmnesiaDB",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest"
   },
-  "keywords": ["amnesia-db", "amnesia"],
+  "keywords": [
+    "amnesia-db",
+    "amnesia"
+  ],
   "author": "Nikhil Nayak",
   "license": "ISC",
   "devDependencies": {

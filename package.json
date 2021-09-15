@@ -1,7 +1,7 @@
 {
-  "name": "keystone",
+  "name": "@amnesia/core",
   "version": "1.0.0",
-  "description": "",
+  "description": "Javascript Client for AmnesiaDB",
   "main": "index.js",
   "scripts": {
     "build": "tsc",

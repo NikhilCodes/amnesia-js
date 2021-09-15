@@ -10,7 +10,7 @@ interface IConnectPropType {
   host?: string;
 }
 
-export class KeyStoneSock {
+export class AmnesiaClient {
   client?: Socket;
   jobResolvers: Map<string, any>;
 

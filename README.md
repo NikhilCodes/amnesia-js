@@ -5,6 +5,8 @@
 
 Connect to locally hosted Amnesia DB
 ```javascript
+import { AmnesiaClient } from 'amnesia-client';
+
 const am = new AmnesiaClient();
 await am.connect({ port: 4224 });
 ```

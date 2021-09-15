@@ -1,6 +1,6 @@
 {
   "name": "amnesia-client",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Javascript Client for AmnesiaDB",
   "main": "index.js",
   "scripts": {

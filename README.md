@@ -17,3 +17,9 @@ let res = await am.query('SET a AS b WHERE TTL=10s NFETCH=2');
 console.log(res) // OK
 ```
 
+Alternatively
+```javascript
+let res = await am.get('key');  // null
+await am.set('key', 'value', { ttl: '20s', nfetch: 2 });
+let res = await am.get('key');  // value
+```

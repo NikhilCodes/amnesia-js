@@ -2,7 +2,7 @@
   "name": "@amnesia-js/core",
   "version": "1.2.0",
   "description": "Javascript Client for AmnesiaDB",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest"

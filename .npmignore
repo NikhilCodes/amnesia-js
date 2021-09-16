@@ -1,2 +1,6 @@
 jest.config.ts
 test/
+.idea
+babel.config.js
+coverage/
+src

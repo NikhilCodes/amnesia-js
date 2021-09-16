@@ -1,6 +1,6 @@
 {
   "name": "@amnesia-js/core",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Javascript Client for AmnesiaDB",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

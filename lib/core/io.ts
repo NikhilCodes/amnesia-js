@@ -7,6 +7,11 @@ interface IConnectPropType {
   host?: string;
 }
 
+interface ISetterConfig {
+  ttl: string;
+  nfetch: number;
+}
+
 export class AmnesiaClient {
   client?: Socket;
   jobResolvers: Map<string, any>;
@@ -47,6 +52,24 @@ export class AmnesiaClient {
         this.client?.write(`${jobId}:${queryString}${CRLF}`);
       },
     );
+  }
+
+  async get(key: string) {
+    const resp = await this.query(`GET ${key}`);
+    if (resp === '<NIL>') {
+      return null;
+    }
+    return resp;
+  }
+
+  async set(key: string, value: string, config?: Partial<ISetterConfig>) {
+    let queryString = `SET "${key}" AS "${value}"`
+    const { ttl, nfetch } = config ?? {}
+    if (ttl || nfetch) {
+      queryString += ` WHERE${ttl ? ` TTL=${ttl}` : ''}${nfetch ? ` NFETCH=${nfetch}` : ''}`
+    }
+    await this.query(queryString);
+    return true;
   }
 
   destroy() {

@@ -1,4 +1,4 @@
-import { AmnesiaClient } from '../src';
+import { AmnesiaClient } from '../lib';
 
 test('Query Test', async () => {
   const am = new AmnesiaClient();
@@ -10,5 +10,14 @@ test('Query Test', async () => {
   let v2 = await p1;
   expect(v1).toContain('<NIL>');
   expect(v2).toContain('OK');
+  am.destroy()
+});
+
+test('Get Set Test', async () => {
+  const am = new AmnesiaClient();
+  await am.connect({});
+  await am.set("test", "random value", {nfetch: 1})
+  expect(await am.get("test")).toContain("random value")
+  expect(await am.get("test")).toBeNull()
   am.destroy()
 });

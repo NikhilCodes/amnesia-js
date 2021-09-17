@@ -10,10 +10,11 @@
   },
   "keywords": [
     "amnesia-db",
-    "amnesia"
+    "amnesia",
+    "amnesia-js"
   ],
   "author": "Nikhil Nayak",
-  "license": "ISC",
+  "license": "AGPL-3.0-or-later",
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
